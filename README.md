@@ -1,5 +1,7 @@
 # holocure-archive
 
+> [\[discord\]](https://discord.gg/KvqKGQNbhr)
+
 Archival project to document and preserve all known versions of HoloCure.
 
 ## Resources
