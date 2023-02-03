@@ -1,0 +1,1 @@
+cd ./scripts/ && npm i && npm run build && cd ../
