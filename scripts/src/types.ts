@@ -1,8 +1,10 @@
 export type CompiledVersions = CompiledVersion[];
 
 export type CompiledVersion = {
-  buildId: string;
-  itchData?: undefined | ItchData;
+  buildId?: string | undefined;
+  timestampUnix: number | undefined;
+  timestampMilliseconds: number | undefined;
+  itchData?: ItchData | undefined;
   tags: SourceTag[];
 };
 
@@ -11,7 +13,7 @@ export type ItchData = {
   itchUrl: string;
 };
 
-export type SourceTag = undefined | "wbm";
+export type SourceTag = undefined | "wbm" | "archive";
 
 export type WBMVersions = WBMVersion[];
 

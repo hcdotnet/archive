@@ -6,8 +6,11 @@
       "itchUrl": "https://web.archive.org/web/20220624040407/https://kay-yu.itch.io/holocure"
     },
     "tags": [
-      "wbm"
-    ]
+      "wbm",
+      "archive"
+    ],
+    "timestampUnix": 1656043288,
+    "timestampMilliseconds": 1656043288000
   },
   {
     "buildId": "6027131",
@@ -26,8 +29,11 @@
       "itchUrl": "https://web.archive.org/web/20220624133630/https://kay-yu.itch.io/holocure"
     },
     "tags": [
-      "wbm"
-    ]
+      "wbm",
+      "archive"
+    ],
+    "timestampUnix": 1656071414,
+    "timestampMilliseconds": 1656071414000
   },
   {
     "buildId": "6033110",
@@ -56,8 +62,11 @@
       "itchUrl": "https://web.archive.org/web/20220625135323/https://kay-yu.itch.io/holocure"
     },
     "tags": [
-      "wbm"
-    ]
+      "wbm",
+      "archive"
+    ],
+    "timestampUnix": 1656160720,
+    "timestampMilliseconds": 1656160720000
   },
   {
     "buildId": "6033573",
@@ -106,8 +115,11 @@
       "itchUrl": "https://web.archive.org/web/20220629054953/https://kay-yu.itch.io/holocure"
     },
     "tags": [
-      "wbm"
-    ]
+      "wbm",
+      "archive"
+    ],
+    "timestampUnix": 1656473087,
+    "timestampMilliseconds": 1656473087000
   },
   {
     "buildId": "6057240",
@@ -116,8 +128,11 @@
       "itchUrl": "https://web.archive.org/web/20220629115548/https://kay-yu.itch.io/holocure"
     },
     "tags": [
-      "wbm"
-    ]
+      "wbm",
+      "archive"
+    ],
+    "timestampUnix": 1656491913,
+    "timestampMilliseconds": 1656491913000
   },
   {
     "buildId": "6470955",
@@ -126,8 +141,11 @@
       "itchUrl": "https://web.archive.org/web/20220909075829/https://kay-yu.itch.io/holocure"
     },
     "tags": [
-      "wbm"
-    ]
+      "wbm",
+      "archive"
+    ],
+    "timestampUnix": 1662708390,
+    "timestampMilliseconds": 1662708390000
   },
   {
     "buildId": "6470955",
@@ -136,8 +154,11 @@
       "itchUrl": "https://web.archive.org/web/20220909190638/https://kay-yu.itch.io/holocure"
     },
     "tags": [
-      "wbm"
-    ]
+      "wbm",
+      "archive"
+    ],
+    "timestampUnix": 1662745659,
+    "timestampMilliseconds": 1662745659000
   },
   {
     "buildId": "6470955",
@@ -146,8 +167,11 @@
       "itchUrl": "https://web.archive.org/web/20220911220032/https://kay-yu.itch.io/holocure"
     },
     "tags": [
-      "wbm"
-    ]
+      "wbm",
+      "archive"
+    ],
+    "timestampUnix": 1662787865,
+    "timestampMilliseconds": 1662787865000
   },
   {
     "buildId": "6470955",
@@ -156,7 +180,94 @@
       "itchUrl": "https://web.archive.org/web/20220918010357/https://kay-yu.itch.io/holocure"
     },
     "tags": [
-      "wbm"
+      "wbm",
+      "archive"
+    ],
+    "timestampUnix": 1663293877,
+    "timestampMilliseconds": 1663293877000
+  },
+  {
+    "timestampUnix": 1656105128,
+    "timestampMilliseconds": 1656105128000,
+    "tags": [
+      "archive"
+    ]
+  },
+  {
+    "timestampUnix": 1656233539,
+    "timestampMilliseconds": 1656233539000,
+    "tags": [
+      "archive"
+    ]
+  },
+  {
+    "timestampUnix": 1662688581,
+    "timestampMilliseconds": 1662688581000,
+    "tags": [
+      "archive"
+    ]
+  },
+  {
+    "timestampUnix": 1662698650,
+    "timestampMilliseconds": 1662698650000,
+    "tags": [
+      "archive"
+    ]
+  },
+  {
+    "timestampUnix": 1662702468,
+    "timestampMilliseconds": 1662702468000,
+    "tags": [
+      "archive"
+    ]
+  },
+  {
+    "timestampUnix": 1662705101,
+    "timestampMilliseconds": 1662705101000,
+    "tags": [
+      "archive"
+    ]
+  },
+  {
+    "timestampUnix": 1662710787,
+    "timestampMilliseconds": 1662710787000,
+    "tags": [
+      "archive"
+    ]
+  },
+  {
+    "timestampUnix": 1662713970,
+    "timestampMilliseconds": 1662713970000,
+    "tags": [
+      "archive"
+    ]
+  },
+  {
+    "timestampUnix": 1662715238,
+    "timestampMilliseconds": 1662715238000,
+    "tags": [
+      "archive"
+    ]
+  },
+  {
+    "timestampUnix": 1662717673,
+    "timestampMilliseconds": 1662717673000,
+    "tags": [
+      "archive"
+    ]
+  },
+  {
+    "timestampUnix": 1662728581,
+    "timestampMilliseconds": 1662728581000,
+    "tags": [
+      "archive"
+    ]
+  },
+  {
+    "timestampUnix": 1663282758,
+    "timestampMilliseconds": 1663282758000,
+    "tags": [
+      "archive"
     ]
   }
 ]
