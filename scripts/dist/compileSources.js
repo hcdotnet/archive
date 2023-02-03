@@ -80,6 +80,17 @@ knownBuildDatesMilliseconds.forEach((buildDate, i) => {
         compiledVersions.push(compiled);
     }
 });
+stragglers.forEach((straggler, i) => {
+    // filter, only uniques
+    if (stragglers.indexOf(straggler) !== i)
+        return;
+    const [unix, milliseconds] = straggler;
+    compiledVersions.push({
+        timestampUnix: unix,
+        timestampMilliseconds: milliseconds,
+        tags: ["archive"],
+    });
+});
 console.log("Compiled sources!");
 //endregion Compiling
 console.log("Writing sources...");
