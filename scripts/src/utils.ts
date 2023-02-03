@@ -41,9 +41,9 @@ export function timeFromItchDate(itchDate: string): number {
 }
 
 export function isDateCloseEnough(
-  left: number,
-  right: number,
-  threshold: number = 10 * 60 * 1000
+  build: number,
+  itch: number,
+  threshold: number = 1 * 60 * 60 // 1 hour
 ) {
-  return Math.abs(left - right) < threshold;
+  return build - itch < threshold;
 }

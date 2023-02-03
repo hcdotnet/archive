@@ -37,7 +37,8 @@ function timeFromItchDate(itchDate) {
     return dateFromItchDate(itchDate).getTime();
 }
 exports.timeFromItchDate = timeFromItchDate;
-function isDateCloseEnough(left, right, threshold = 10 * 60 * 1000) {
-    return Math.abs(left - right) < threshold;
+function isDateCloseEnough(build, itch, threshold = 1 * 60 * 60 // 1 hour
+) {
+    return build - itch < threshold;
 }
 exports.isDateCloseEnough = isDateCloseEnough;

@@ -42,8 +42,11 @@
       "itchUrl": "https://web.archive.org/web/20220625102042/https://kay-yu.itch.io/holocure"
     },
     "tags": [
-      "wbm"
-    ]
+      "wbm",
+      "archive"
+    ],
+    "timestampUnix": 1656105128,
+    "timestampMilliseconds": 1656105128000
   },
   {
     "buildId": "6033272",
@@ -95,8 +98,11 @@
       "itchUrl": "https://web.archive.org/web/20220626130150/https://kay-yu.itch.io/holocure"
     },
     "tags": [
-      "wbm"
-    ]
+      "wbm",
+      "archive"
+    ],
+    "timestampUnix": 1656233539,
+    "timestampMilliseconds": 1656233539000
   },
   {
     "buildId": "6037801",
@@ -142,6 +148,10 @@
     },
     "tags": [
       "wbm",
+      "archive",
+      "archive",
+      "archive",
+      "archive",
       "archive"
     ],
     "timestampUnix": 1662708390,
@@ -155,6 +165,11 @@
     },
     "tags": [
       "wbm",
+      "archive",
+      "archive",
+      "archive",
+      "archive",
+      "archive",
       "archive"
     ],
     "timestampUnix": 1662745659,
@@ -181,93 +196,10 @@
     },
     "tags": [
       "wbm",
+      "archive",
       "archive"
     ],
     "timestampUnix": 1663293877,
     "timestampMilliseconds": 1663293877000
-  },
-  {
-    "timestampUnix": 1656105128,
-    "timestampMilliseconds": 1656105128000,
-    "tags": [
-      "archive"
-    ]
-  },
-  {
-    "timestampUnix": 1656233539,
-    "timestampMilliseconds": 1656233539000,
-    "tags": [
-      "archive"
-    ]
-  },
-  {
-    "timestampUnix": 1662688581,
-    "timestampMilliseconds": 1662688581000,
-    "tags": [
-      "archive"
-    ]
-  },
-  {
-    "timestampUnix": 1662698650,
-    "timestampMilliseconds": 1662698650000,
-    "tags": [
-      "archive"
-    ]
-  },
-  {
-    "timestampUnix": 1662702468,
-    "timestampMilliseconds": 1662702468000,
-    "tags": [
-      "archive"
-    ]
-  },
-  {
-    "timestampUnix": 1662705101,
-    "timestampMilliseconds": 1662705101000,
-    "tags": [
-      "archive"
-    ]
-  },
-  {
-    "timestampUnix": 1662710787,
-    "timestampMilliseconds": 1662710787000,
-    "tags": [
-      "archive"
-    ]
-  },
-  {
-    "timestampUnix": 1662713970,
-    "timestampMilliseconds": 1662713970000,
-    "tags": [
-      "archive"
-    ]
-  },
-  {
-    "timestampUnix": 1662715238,
-    "timestampMilliseconds": 1662715238000,
-    "tags": [
-      "archive"
-    ]
-  },
-  {
-    "timestampUnix": 1662717673,
-    "timestampMilliseconds": 1662717673000,
-    "tags": [
-      "archive"
-    ]
-  },
-  {
-    "timestampUnix": 1662728581,
-    "timestampMilliseconds": 1662728581000,
-    "tags": [
-      "archive"
-    ]
-  },
-  {
-    "timestampUnix": 1663282758,
-    "timestampMilliseconds": 1663282758000,
-    "tags": [
-      "archive"
-    ]
   }
 ]

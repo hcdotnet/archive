@@ -52,7 +52,7 @@ knownBuildDatesMilliseconds.forEach((buildDate, i) => {
   let compiled = compiledVersions.find((version) => {
     if (!version.itchData) return false;
     const itchTime = timeFromItchDate(version.itchData.itchDate);
-    return isDateCloseEnough(itchTime, buildDate);
+    return isDateCloseEnough(buildDate, itchTime);
   });
   if (!compiled) {
     compiled = {
