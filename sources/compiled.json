@@ -42,11 +42,8 @@
       "itchUrl": "https://web.archive.org/web/20220625102042/https://kay-yu.itch.io/holocure"
     },
     "tags": [
-      "wbm",
-      "archive"
-    ],
-    "timestampUnix": 1656105128,
-    "timestampMilliseconds": 1656105128000
+      "wbm"
+    ]
   },
   {
     "buildId": "6033272",
@@ -88,8 +85,11 @@
       "itchUrl": "https://web.archive.org/web/20220626084646/https://kay-yu.itch.io/holocure"
     },
     "tags": [
-      "wbm"
-    ]
+      "wbm",
+      "archive"
+    ],
+    "timestampUnix": 1656233539,
+    "timestampMilliseconds": 1656233539000
   },
   {
     "buildId": "6037801",
@@ -98,11 +98,8 @@
       "itchUrl": "https://web.archive.org/web/20220626130150/https://kay-yu.itch.io/holocure"
     },
     "tags": [
-      "wbm",
-      "archive"
-    ],
-    "timestampUnix": 1656233539,
-    "timestampMilliseconds": 1656233539000
+      "wbm"
+    ]
   },
   {
     "buildId": "6037801",
@@ -148,14 +145,10 @@
     },
     "tags": [
       "wbm",
-      "archive",
-      "archive",
-      "archive",
-      "archive",
       "archive"
     ],
-    "timestampUnix": 1662708390,
-    "timestampMilliseconds": 1662708390000
+    "timestampUnix": 1662688581,
+    "timestampMilliseconds": 1662688581000
   },
   {
     "buildId": "6470955",
@@ -165,15 +158,10 @@
     },
     "tags": [
       "wbm",
-      "archive",
-      "archive",
-      "archive",
-      "archive",
-      "archive",
       "archive"
     ],
-    "timestampUnix": 1662745659,
-    "timestampMilliseconds": 1662745659000
+    "timestampUnix": 1662728581,
+    "timestampMilliseconds": 1662728581000
   },
   {
     "buildId": "6470955",
@@ -196,10 +184,9 @@
     },
     "tags": [
       "wbm",
-      "archive",
       "archive"
     ],
-    "timestampUnix": 1663293877,
-    "timestampMilliseconds": 1663293877000
+    "timestampUnix": 1663282758,
+    "timestampMilliseconds": 1663282758000
   }
 ]

@@ -4,7 +4,8 @@ import { writeFileSync } from "fs";
 import { CompiledVersion, CompiledVersions } from "./types";
 import { dateFromItchDate, isDateCloseEnough, timeFromItchDate } from "./utils";
 
-const compiledPath = join("sources", "compiled.json");
+const COMPILED_PATH = join("sources", "compiled.json");
+const BUILD_DATE_THRESHOLD = 12 * 60 * 60 * 1000; // 12 hours
 
 //region Collecting
 console.log("Collecting sources...");
@@ -45,26 +46,52 @@ wbmVersions.forEach((wbmVersion) => {
   compiledVersions.push(compiledVersion);
 });
 
+const stragglers: [number, number][] = [];
 knownBuildDatesMilliseconds.forEach((buildDate, i) => {
   const unix = knownBuildDatesUnix[i];
 
   // match build date to itch.io update time
-  let compiled = compiledVersions.find((version) => {
-    if (!version.itchData) return false;
-    const itchTime = timeFromItchDate(version.itchData.itchDate);
-    return isDateCloseEnough(buildDate, itchTime);
+  let nearestIndex = -1;
+  let nearestDistance = Infinity;
+  wbmVersions.forEach((wbmVersion, index) => {
+    const itchTime = timeFromItchDate(wbmVersion.buildDate);
+    const distance = Math.abs(buildDate - itchTime);
+    if (distance < nearestDistance) {
+      nearestDistance = distance;
+      nearestIndex = index;
+    }
   });
-  if (!compiled) {
-    compiled = {
-      timestampUnix: unix,
-      timestampMilliseconds: buildDate,
-      tags: ["archive"],
-    };
-    compiledVersions.push(compiled);
+
+  console.log(nearestIndex, nearestDistance);
+
+  let compiled: CompiledVersion = {
+    timestampUnix: unix,
+    timestampMilliseconds: buildDate,
+    tags: ["archive"],
+  };
+  if (nearestDistance <= BUILD_DATE_THRESHOLD) {
+    compiled = compiledVersions[nearestIndex];
+
+    let add = true;
+
+    if (compiled.timestampUnix && compiled.timestampMilliseconds) {
+      if (compiled.timestampUnix > unix) {
+        stragglers.push([
+          compiled.timestampUnix,
+          compiled.timestampMilliseconds,
+        ]);
+      } else {
+        add = false;
+      }
+    }
+
+    if (add) {
+      compiled.timestampUnix = unix;
+      compiled.timestampMilliseconds = buildDate;
+      compiled.tags.push("archive");
+    }
   } else {
-    compiled.timestampUnix = unix;
-    compiled.timestampMilliseconds = buildDate;
-    compiled.tags.push("archive");
+    compiledVersions.push(compiled);
   }
 });
 
@@ -72,5 +99,5 @@ console.log("Compiled sources!");
 //endregion Compiling
 
 console.log("Writing sources...");
-writeFileSync(compiledPath, JSON.stringify(compiledVersions, null, 2));
-console.log(`Sources written to: "${compiledPath}"`);
+writeFileSync(COMPILED_PATH, JSON.stringify(compiledVersions, null, 2));
+console.log(`Sources written to: "${COMPILED_PATH}"`);
