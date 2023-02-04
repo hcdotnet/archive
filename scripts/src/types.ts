@@ -9,6 +9,7 @@ export type CompiledVersion = {
 export type ArchiveData = {
   timestampUnix: number;
   timestampMilliseconds: number;
+  archiveName: string;
 };
 
 export type ItchData = {

@@ -1,7 +1,7 @@
 import { join } from "path";
-import { getKnownBuildDates, getWbmVersions } from "./collectSources";
+import { getArchiveInformation, getWbmVersions } from "./collectSources";
 import { writeFileSync } from "fs";
-import { CompiledVersion, CompiledVersions } from "./types";
+import { ArchiveData, CompiledVersion, CompiledVersions } from "./types";
 import { timeFromItchDate } from "./utils";
 
 const COMPILED_PATH = join("sources", "compiled.json");
@@ -10,13 +10,10 @@ const BUILD_DATE_THRESHOLD = 12 * 60 * 60 * 1000; // 12 hours
 //region Collecting
 console.log("Collecting sources...");
 
-console.log("Resolving known build dates...");
-const knownBuildDatesUnix = getKnownBuildDates("./archive/");
-const knownBuildDatesMilliseconds = knownBuildDatesUnix.map(
-  (date) => date * 1000
-);
-console.log("Resolved known build dates:");
-console.log(knownBuildDatesUnix);
+console.log("Resolving archive information...");
+const archiveInfo = getArchiveInformation("./archive/");
+console.log("Resolved archive information:");
+console.log(archiveInfo);
 
 console.log("Resolving WBM versions...");
 const wbmVersions = getWbmVersions("./sources/wbm/versions.json");
@@ -44,16 +41,14 @@ wbmVersions.forEach((wbmVersion) => {
   compiledVersions.push(compiledVersion);
 });
 
-const stragglers: [number, number][] = [];
-knownBuildDatesMilliseconds.forEach((buildDate, i) => {
-  const unix = knownBuildDatesUnix[i];
-
+const stragglers: ArchiveData[] = [];
+archiveInfo.forEach((info, i) => {
   // match build date to itch.io update time
   let nearestIndex = -1;
   let nearestDistance = Infinity;
   wbmVersions.forEach((wbmVersion, index) => {
     const itchTime = timeFromItchDate(wbmVersion.buildDate);
-    const distance = Math.abs(buildDate - itchTime);
+    const distance = Math.abs(info.timestampMilliseconds - itchTime);
     if (distance < nearestDistance) {
       nearestDistance = distance;
       nearestIndex = index;
@@ -63,10 +58,7 @@ knownBuildDatesMilliseconds.forEach((buildDate, i) => {
   console.log(nearestIndex, nearestDistance);
 
   let compiled: CompiledVersion = {
-    archiveData: {
-      timestampUnix: unix,
-      timestampMilliseconds: buildDate,
-    },
+    archiveData: info,
     tags: ["archive"],
   };
   if (nearestDistance <= BUILD_DATE_THRESHOLD) {
@@ -79,21 +71,15 @@ knownBuildDatesMilliseconds.forEach((buildDate, i) => {
       compiled.archiveData.timestampUnix &&
       compiled.archiveData.timestampMilliseconds
     ) {
-      if (compiled.archiveData.timestampUnix > unix) {
-        stragglers.push([
-          compiled.archiveData.timestampUnix,
-          compiled.archiveData.timestampMilliseconds,
-        ]);
+      if (compiled.archiveData.timestampUnix > info.timestampUnix) {
+        stragglers.push(info);
       } else {
         add = false;
       }
     }
 
     if (add) {
-      compiled.archiveData = {
-        timestampUnix: unix,
-        timestampMilliseconds: buildDate,
-      };
+      compiled.archiveData = info;
       compiled.tags.push("archive");
     }
   } else {
@@ -105,12 +91,8 @@ stragglers.forEach((straggler, i) => {
   // filter, only uniques
   if (stragglers.indexOf(straggler) !== i) return;
 
-  const [unix, milliseconds] = straggler;
   compiledVersions.push({
-    archiveData: {
-      timestampUnix: unix,
-      timestampMilliseconds: milliseconds,
-    },
+    archiveData: straggler,
     tags: ["archive"],
   });
 });

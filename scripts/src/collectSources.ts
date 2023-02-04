@@ -1,19 +1,24 @@
 /* Collects version information from sources and compiled them into a cohesive list. */
 
 import { readFileSync, readdirSync } from "fs";
-import { WBMVersions } from "./types";
+import { ArchiveData, WBMVersions } from "./types";
 
 export function getWbmVersions(path: string): WBMVersions {
   return JSON.parse(readFileSync(path, "utf8")) as WBMVersions;
 }
 
-export function getKnownBuildDates(path: string): number[] {
+export function getArchiveInformation(path: string): ArchiveData[] {
   const archives = readdirSync(path);
-  const buildDates: number[] = [];
+  const data: ArchiveData[] = [];
 
   archives.forEach((archive) => {
     const split = archive.split(".");
-    buildDates.push(Number(split[split.length - 2]));
+    const timestamp = Number(split[split.length - 2]);
+    data.push({
+      timestampUnix: timestamp,
+      timestampMilliseconds: timestamp * 1000,
+      archiveName: archive,
+    });
   });
-  return buildDates;
+  return data;
 }
