@@ -9,8 +9,10 @@
       "wbm",
       "archive"
     ],
-    "timestampUnix": 1656043288,
-    "timestampMilliseconds": 1656043288000
+    "archiveData": {
+      "timestampUnix": 1656043288,
+      "timestampMilliseconds": 1656043288000
+    }
   },
   {
     "itchData": {
@@ -32,8 +34,10 @@
       "wbm",
       "archive"
     ],
-    "timestampUnix": 1656071414,
-    "timestampMilliseconds": 1656071414000
+    "archiveData": {
+      "timestampUnix": 1656071414,
+      "timestampMilliseconds": 1656071414000
+    }
   },
   {
     "itchData": {
@@ -65,8 +69,10 @@
       "wbm",
       "archive"
     ],
-    "timestampUnix": 1656160720,
-    "timestampMilliseconds": 1656160720000
+    "archiveData": {
+      "timestampUnix": 1656160720,
+      "timestampMilliseconds": 1656160720000
+    }
   },
   {
     "itchData": {
@@ -78,8 +84,10 @@
       "wbm",
       "archive"
     ],
-    "timestampUnix": 1656233539,
-    "timestampMilliseconds": 1656233539000
+    "archiveData": {
+      "timestampUnix": 1656233539,
+      "timestampMilliseconds": 1656233539000
+    }
   },
   {
     "itchData": {
@@ -101,8 +109,10 @@
       "wbm",
       "archive"
     ],
-    "timestampUnix": 1656473087,
-    "timestampMilliseconds": 1656473087000
+    "archiveData": {
+      "timestampUnix": 1656473087,
+      "timestampMilliseconds": 1656473087000
+    }
   },
   {
     "itchData": {
@@ -114,8 +124,10 @@
       "wbm",
       "archive"
     ],
-    "timestampUnix": 1656491913,
-    "timestampMilliseconds": 1656491913000
+    "archiveData": {
+      "timestampUnix": 1656491913,
+      "timestampMilliseconds": 1656491913000
+    }
   },
   {
     "itchData": {
@@ -127,8 +139,10 @@
       "wbm",
       "archive"
     ],
-    "timestampUnix": 1662688581,
-    "timestampMilliseconds": 1662688581000
+    "archiveData": {
+      "timestampUnix": 1662688581,
+      "timestampMilliseconds": 1662688581000
+    }
   },
   {
     "itchData": {
@@ -140,8 +154,10 @@
       "wbm",
       "archive"
     ],
-    "timestampUnix": 1662728581,
-    "timestampMilliseconds": 1662728581000
+    "archiveData": {
+      "timestampUnix": 1662728581,
+      "timestampMilliseconds": 1662728581000
+    }
   },
   {
     "itchData": {
@@ -153,8 +169,10 @@
       "wbm",
       "archive"
     ],
-    "timestampUnix": 1662787865,
-    "timestampMilliseconds": 1662787865000
+    "archiveData": {
+      "timestampUnix": 1662787865,
+      "timestampMilliseconds": 1662787865000
+    }
   },
   {
     "itchData": {
@@ -166,7 +184,9 @@
       "wbm",
       "archive"
     ],
-    "timestampUnix": 1663282758,
-    "timestampMilliseconds": 1663282758000
+    "archiveData": {
+      "timestampUnix": 1663282758,
+      "timestampMilliseconds": 1663282758000
+    }
   }
 ]

@@ -1,14 +1,18 @@
 export type CompiledVersions = CompiledVersion[];
 
 export type CompiledVersion = {
-  timestampUnix: number | undefined;
-  timestampMilliseconds: number | undefined;
+  archiveData?: ArchiveData | undefined;
   itchData?: ItchData | undefined;
   tags: SourceTag[];
 };
 
+export type ArchiveData = {
+  timestampUnix: number;
+  timestampMilliseconds: number;
+};
+
 export type ItchData = {
-  buildId?: string | undefined;
+  buildId: string;
   itchDate: string;
   itchUrl: string;
 };

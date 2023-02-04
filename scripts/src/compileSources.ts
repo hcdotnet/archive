@@ -2,7 +2,7 @@ import { join } from "path";
 import { getKnownBuildDates, getWbmVersions } from "./collectSources";
 import { writeFileSync } from "fs";
 import { CompiledVersion, CompiledVersions } from "./types";
-import { dateFromItchDate, isDateCloseEnough, timeFromItchDate } from "./utils";
+import { timeFromItchDate } from "./utils";
 
 const COMPILED_PATH = join("sources", "compiled.json");
 const BUILD_DATE_THRESHOLD = 12 * 60 * 60 * 1000; // 12 hours
@@ -40,8 +40,6 @@ wbmVersions.forEach((wbmVersion) => {
       itchUrl: wbmVersion.url,
     },
     tags: ["wbm"],
-    timestampUnix: undefined,
-    timestampMilliseconds: undefined,
   };
   compiledVersions.push(compiledVersion);
 });
@@ -65,8 +63,10 @@ knownBuildDatesMilliseconds.forEach((buildDate, i) => {
   console.log(nearestIndex, nearestDistance);
 
   let compiled: CompiledVersion = {
-    timestampUnix: unix,
-    timestampMilliseconds: buildDate,
+    archiveData: {
+      timestampUnix: unix,
+      timestampMilliseconds: buildDate,
+    },
     tags: ["archive"],
   };
   if (nearestDistance <= BUILD_DATE_THRESHOLD) {
@@ -74,11 +74,15 @@ knownBuildDatesMilliseconds.forEach((buildDate, i) => {
 
     let add = true;
 
-    if (compiled.timestampUnix && compiled.timestampMilliseconds) {
-      if (compiled.timestampUnix > unix) {
+    if (
+      compiled.archiveData &&
+      compiled.archiveData.timestampUnix &&
+      compiled.archiveData.timestampMilliseconds
+    ) {
+      if (compiled.archiveData.timestampUnix > unix) {
         stragglers.push([
-          compiled.timestampUnix,
-          compiled.timestampMilliseconds,
+          compiled.archiveData.timestampUnix,
+          compiled.archiveData.timestampMilliseconds,
         ]);
       } else {
         add = false;
@@ -86,8 +90,10 @@ knownBuildDatesMilliseconds.forEach((buildDate, i) => {
     }
 
     if (add) {
-      compiled.timestampUnix = unix;
-      compiled.timestampMilliseconds = buildDate;
+      compiled.archiveData = {
+        timestampUnix: unix,
+        timestampMilliseconds: buildDate,
+      };
       compiled.tags.push("archive");
     }
   } else {
@@ -101,8 +107,10 @@ stragglers.forEach((straggler, i) => {
 
   const [unix, milliseconds] = straggler;
   compiledVersions.push({
-    timestampUnix: unix,
-    timestampMilliseconds: milliseconds,
+    archiveData: {
+      timestampUnix: unix,
+      timestampMilliseconds: milliseconds,
+    },
     tags: ["archive"],
   });
 });
