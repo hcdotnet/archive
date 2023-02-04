@@ -1,7 +1,6 @@
 export type CompiledVersions = CompiledVersion[];
 
 export type CompiledVersion = {
-  buildId?: string | undefined;
   timestampUnix: number | undefined;
   timestampMilliseconds: number | undefined;
   itchData?: ItchData | undefined;
@@ -9,6 +8,7 @@ export type CompiledVersion = {
 };
 
 export type ItchData = {
+  buildId?: string | undefined;
   itchDate: string;
   itchUrl: string;
 };

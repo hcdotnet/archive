@@ -34,8 +34,8 @@ const compiledVersions: CompiledVersions = [];
 // handle WBM versions - needs porting to a grander system later
 wbmVersions.forEach((wbmVersion) => {
   const compiledVersion: CompiledVersion = {
-    buildId: wbmVersion.buildId,
     itchData: {
+      buildId: wbmVersion.buildId,
       itchDate: wbmVersion.buildDate,
       itchUrl: wbmVersion.url,
     },
