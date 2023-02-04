@@ -1,7 +1,7 @@
-//const url = document.URL;
 const url = window.location;
-const buildId = document.getElementsByClassName("button download_btn")[0]
-  .attributes["data-upload_id"].textContent;
+const elems = document.getElementsByClassName("button download_btn");
+const buildId =
+  elems[elems.length - 1].attributes["data-upload_id"].textContent;
 const buildDate =
   document.getElementsByClassName("update_timestamp")[0].childNodes[1].title;
 
@@ -10,6 +10,4 @@ const msg = `{
     "buildId": "${buildId}",
     "buildDate": "${buildDate}"
 }`;
-//alert(msg);
-//console.log(msg);
 navigator.clipboard.writeText(msg);
