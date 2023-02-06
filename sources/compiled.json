@@ -84,14 +84,8 @@
       "itchUrl": "https://web.archive.org/web/20220626084646/https://kay-yu.itch.io/holocure"
     },
     "tags": [
-      "wbm",
-      "archive"
-    ],
-    "archiveData": {
-      "timestampUnix": 1656233539,
-      "timestampMilliseconds": 1656233539000,
-      "archiveName": "DEMO 0.3.1656233539.zip"
-    }
+      "wbm"
+    ]
   },
   {
     "itchData": {
@@ -100,8 +94,14 @@
       "itchUrl": "https://web.archive.org/web/20220626130150/https://kay-yu.itch.io/holocure"
     },
     "tags": [
-      "wbm"
-    ]
+      "wbm",
+      "archive"
+    ],
+    "archiveData": {
+      "timestampUnix": 1656233539,
+      "timestampMilliseconds": 1656233539000,
+      "archiveName": "DEMO 0.3.1656233539.zip"
+    }
   },
   {
     "itchData": {
@@ -143,12 +143,16 @@
     },
     "tags": [
       "wbm",
+      "archive",
+      "archive",
+      "archive",
+      "archive",
       "archive"
     ],
     "archiveData": {
-      "timestampUnix": 1662688581,
-      "timestampMilliseconds": 1662688581000,
-      "archiveName": "DEMO 0.4.1662688581.zip"
+      "timestampUnix": 1662708390,
+      "timestampMilliseconds": 1662708390000,
+      "archiveName": "DEMO 0.4.1662708390.zip"
     }
   },
   {
@@ -159,12 +163,17 @@
     },
     "tags": [
       "wbm",
+      "archive",
+      "archive",
+      "archive",
+      "archive",
+      "archive",
       "archive"
     ],
     "archiveData": {
-      "timestampUnix": 1662728581,
-      "timestampMilliseconds": 1662728581000,
-      "archiveName": "DEMO 0.4.1662728581.zip"
+      "timestampUnix": 1662745659,
+      "timestampMilliseconds": 1662745659000,
+      "archiveName": "DEMO 0.4.1662745659.zip"
     }
   },
   {
@@ -191,12 +200,23 @@
     },
     "tags": [
       "wbm",
+      "archive",
       "archive"
     ],
     "archiveData": {
-      "timestampUnix": 1663282758,
-      "timestampMilliseconds": 1663282758000,
-      "archiveName": "DEMO 0.4.1663282758.zip"
+      "timestampUnix": 1663293877,
+      "timestampMilliseconds": 1663293877000,
+      "archiveName": "DEMO 0.4.1663293877.zip"
     }
+  },
+  {
+    "archiveData": {
+      "timestampUnix": 1656105128,
+      "timestampMilliseconds": 1656105128000,
+      "archiveName": "DEMO 0.3.1656105128.zip"
+    },
+    "tags": [
+      "archive"
+    ]
   }
 ]

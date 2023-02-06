@@ -5,7 +5,7 @@ import { ArchiveData, CompiledVersion, CompiledVersions } from "./types";
 import { timeFromItchDate } from "./utils";
 
 const COMPILED_PATH = join("sources", "compiled.json");
-const BUILD_DATE_THRESHOLD = 12 * 60 * 60 * 1000; // 12 hours
+const BUILD_DATE_THRESHOLD = 12 * 60 * 60 * 1000; // 30 minutes
 
 //region Collecting
 console.log("Collecting sources...");
@@ -41,15 +41,14 @@ wbmVersions.forEach((wbmVersion) => {
   compiledVersions.push(compiledVersion);
 });
 
-const stragglers: ArchiveData[] = [];
 archiveInfo.forEach((info, i) => {
   // match build date to itch.io update time
   let nearestIndex = -1;
   let nearestDistance = Infinity;
   wbmVersions.forEach((wbmVersion, index) => {
     const itchTime = timeFromItchDate(wbmVersion.buildDate);
-    const distance = Math.abs(info.timestampMilliseconds - itchTime);
-    if (distance < nearestDistance) {
+    const distance = itchTime - info.timestampMilliseconds;
+    if (distance > 0 && distance < nearestDistance) {
       nearestDistance = distance;
       nearestIndex = index;
     }
@@ -63,38 +62,11 @@ archiveInfo.forEach((info, i) => {
   };
   if (nearestDistance <= BUILD_DATE_THRESHOLD) {
     compiled = compiledVersions[nearestIndex];
-
-    let add = true;
-
-    if (
-      compiled.archiveData &&
-      compiled.archiveData.timestampUnix &&
-      compiled.archiveData.timestampMilliseconds
-    ) {
-      if (compiled.archiveData.timestampUnix > info.timestampUnix) {
-        stragglers.push(info);
-      } else {
-        add = false;
-      }
-    }
-
-    if (add) {
-      compiled.archiveData = info;
-      compiled.tags.push("archive");
-    }
+    compiled.archiveData = info;
+    compiled.tags.push("archive");
   } else {
     compiledVersions.push(compiled);
   }
-});
-
-stragglers.forEach((straggler, i) => {
-  // filter, only uniques
-  if (stragglers.indexOf(straggler) !== i) return;
-
-  compiledVersions.push({
-    archiveData: straggler,
-    tags: ["archive"],
-  });
 });
 
 console.log("Compiled sources!");

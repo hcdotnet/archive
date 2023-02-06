@@ -13,31 +13,21 @@ const months = [
   "December",
 ];
 
-function getMonth(month: string): string {
-  const num = months.indexOf(month) + 1;
-  return (num < 10 ? "0" : "") + num;
-}
-
-export function dateFromItchDate(itchDate: string): Date {
-  // <day> <month name> <year> @ <hour>:<minute>
-  const split = itchDate.split(" ");
-  const day = split[0];
-  const month = split[1];
-  const year = split[2];
-  const time = split[4];
-  const hour = time.split(":")[0];
-  const minute = time.split(":")[1];
-  const date = new Date(
-    `${year}-${getMonth(month)}-${day}T${hour}:${minute}:00`
-  );
-
-  date.setHours(date.getHours() - 7); // stupid correction needs checking
-
-  return date;
+function getMonth(month: string): number {
+  return months.indexOf(month);
 }
 
 export function timeFromItchDate(itchDate: string): number {
-  return dateFromItchDate(itchDate).getTime();
+  // <day> <month name> <year> @ <hour>:<minute>
+  const split = itchDate.split(" ");
+  const day = Number(split[0]);
+  const month = getMonth(split[1]);
+  const year = Number(split[2]);
+  const time = split[4];
+  const hour = Number(time.split(":")[0]);
+  const minute = Number(time.split(":")[1]);
+
+  return Date.UTC(year, month, day, hour, minute);
 }
 
 export function isDateCloseEnough(
