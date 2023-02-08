@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net7.0</TargetFramework>
+        <LangVersion>latest</LangVersion>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="CliFx" Version="2.3.1" />
+        <PackageReference Include="JetBrains.Annotations" Version="2022.3.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Content Include="..\..\archive\*.zip">
+            <Link>sources/archive/%(Filename)%(Extension)</Link>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+
+        <Content Include="..\..\sources\wbm\versions.json">
+            <Link>sources/wbm/versions.json</Link>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\HCA\HCA.csproj" />
+    </ItemGroup>
+
+</Project>
