@@ -25,7 +25,11 @@ public static class SourcesCompiler {
             },
         }));
 
-        foreach (var archive in archives) {
+        var archivesUsed = new bool[archives.Length];
+
+        for (var i = 0; i < archives.Length; i++) {
+            archivesUsed[i] = false;
+            var archive = archives[i];
             var archiveDate = DateHandler.FromSeconds(archive.TimestampUnix);
 
             foreach (var source in sources) {
@@ -42,7 +46,20 @@ public static class SourcesCompiler {
 
                 source.ArchiveData = archive;
                 source.Tags.Add("archive");
+                archivesUsed[i] = true;
             }
+        }
+
+        for (var i = 0; i < archivesUsed.Length; i++) {
+            if (archivesUsed[i])
+                continue;
+
+            sources.Add(new CompiledSource {
+                ArchiveData = archives[i],
+                Tags = new List<string> {
+                    "archive",
+                }
+            });
         }
 
         return sources;
