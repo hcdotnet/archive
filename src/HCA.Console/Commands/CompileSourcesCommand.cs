@@ -39,7 +39,13 @@ public sealed class CompileSourcesCommand : ICommand {
         await console.Output.WriteLineAsync("Writing to: " + Output);
         await File.WriteAllTextAsync(
             Output,
-            JsonConvert.SerializeObject(sources, Formatting.Indented)
+            JsonConvert.SerializeObject(
+                sources,
+                new JsonSerializerSettings {
+                    Formatting = Formatting.Indented,
+                    NullValueHandling = NullValueHandling.Ignore,
+                }
+            )
         );
     }
 
