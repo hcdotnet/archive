@@ -1,3 +1,6 @@
+> [!WARNING]
+> Somewhat ironically, this archival project is being archived. A perfectly usable [Google Drive folder](https://drive.google.com/drive/folders/1PuouVXOxCkzAaaYG4dmOv2xo_RNElN6t) exists for a vast majority of the pre-Steam releases, and now that HoloCure is distributed through Steam, we can rely on most versions existing through their servers as well.
+
 # holocure-archive
 
 > [\[discord\]](https://discord.gg/KvqKGQNbhr)
